@@ -1,0 +1,149 @@
+version: '3'
+
+services:
+
+  jenkins:
+    build: ./jenkins
+    privileged: true
+    user: root
+    restart: unless-stopped
+    container_name: jenkins
+    ports:
+      - "6080:8080"
+      - "50000:50000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - /usr/bin/mvn:/usr/bin/mvn
+      - /bin/sh:/bin/sh
+      - /bin/mvn:/bin/mvn
+      - /var/jenkins_home:/var/jenkins_home
+      - /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+
+  prometheus:
+    image: prom/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prom_data:/prometheus
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana:/etc/grafana/provisioning/datasource.yml
+
+  filebeat:
+    image: elastic/filebeat:7.17.8
+    container_name: filebeat
+    volumes:
+      - ./config/beats/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./logs:/var/log/app_logs
+    environment:
+      LOGSTASH_HOST: logstash:5085
+    depends_on:
+      - logstash
+
+  logstash:
+    image: logstash:7.17.8
+    container_name: logstash
+    ports:
+      - "9600:9600"
+      - "5085:5085" # Puerto Beats
+    environment:
+      ELASTICSEARCH_HOST: elasticsearch:9200
+    volumes:
+      - ./config/logstash/app-logs.conf:/usr/share/logstash/pipeline/app-logs.conf:ro
+      - ./config/logstash/templates:/usr/share/logstash/templates
+
+
+  elasticsearch:
+    image: elasticsearch:7.17.8
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+
+
+  kibana:
+    image: kibana:7.17.8
+    container_name: kibana
+    ports:
+      - "5601:5601"
+
+  rabbitmq:
+    image: rabbitmq:3.7.6-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - "TZ=@timezone@"
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "status" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  zipkin:
+    image: openzipkin/zipkin:2.23.0
+    container_name: zipkin
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - "9411:9411"
+    environment:
+      - "TZ=@timezone@"
+      - "RABBIT_URI=amqp://guest:guest@rabbitmq:5672"
+
+  animalShelter_db:
+    image: postgres
+    container_name: "animalShelter_db"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: animalShelter
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+  prom_data:
+  elasticsearch:
