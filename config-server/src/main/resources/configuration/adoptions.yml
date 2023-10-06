@@ -1,0 +1,33 @@
+server:
+  port: 8083
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+spring:
+  config:
+    activate:
+      on-profile: default
+  application:
+    name: adoptions
+    zipkin: http://zipkin:9411
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://${animalShelter_db:localhost}:5432/animalShelter
+    username: postgres
+    password: admin123
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
