@@ -65,9 +65,13 @@ services:
 
   filebeat:
     image: elastic/filebeat:7.17.8
+    user: root
     container_name: filebeat
+    command:
+      - "-e"
+      - "--strict.perms=false"
     volumes:
-      - ./config/beats/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./config/beats/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - ./logs:/var/log/app_logs
     environment:
       LOGSTASH_HOST: logstash:5085
