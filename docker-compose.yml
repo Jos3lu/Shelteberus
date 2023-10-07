@@ -20,6 +20,23 @@ services:
       - /var/jenkins_home:/var/jenkins_home
       - /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+  sonarqube:
+    image: sonarqube:community
+    hostname: sonarqube
+    container_name: sonarqube
+    depends_on:
+      - animalShelter_db
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://animalShelter_db:5432/animalShelter
+      SONAR_JDBC_USERNAME: postgres
+      SONAR_JDBC_PASSWORD: admin123
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    ports:
+      - "8082:9000"
+
   node-exporter:
     image: prom/node-exporter:latest
     container_name: node-exporter
@@ -145,9 +162,14 @@ services:
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: animalShelter
     volumes:
+      - db:/var/lib/postgresql
       - db-data:/var/lib/postgresql/data
 
 volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  db:
   db-data:
   prom_data:
   elasticsearch:
