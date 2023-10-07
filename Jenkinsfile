@@ -20,6 +20,19 @@ node {
    echo 'Compilando aplicación'
    sh 'mvn clean compile'
 
+   // Etapa: Test
+   stage 'Test'
+   echo 'Ejecutando tests'
+   try{
+      sh 'mvn verify'
+      step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+   }catch(err) {
+      step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+      if (currentBuild.result == 'UNSTABLE')
+         currentBuild.result = 'FAILURE'
+      throw err
+   }
+
    // Etapa: Instalar y guardar JAR
 
    stage 'Instalar y guardar JAR'
@@ -32,7 +45,7 @@ node {
 
    stage 'Build Imagen y subir a DockerHub'
    echo 'Buildear la imagen'
-   dockerImage = docker.build("ggrande/ticket-price:latest")
+   dockerImage = docker.build("jos3lu/shelteberus:latest")
    echo 'Subir imagen a DockerHub'
    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
       dockerImage.push()
