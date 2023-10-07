@@ -35,7 +35,7 @@ services:
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_logs:/opt/sonarqube/logs
     ports:
-      - "8082:9000"
+      - "9000:9000"
 
   node-exporter:
     image: prom/node-exporter:latest
