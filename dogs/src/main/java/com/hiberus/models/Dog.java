@@ -33,11 +33,11 @@ public class Dog {
     private Date birth;
 
     @Setter
-    @Column(name = "reserved")
-    private Boolean reserved;
+    @Column(name = "reserve_dni")
+    private String reserveDNI;
 
     void validDog() throws DogNotValidException {
-        if (name.isBlank() || breed == null || birth == null || reserved == null) {
+        if (name.isBlank() || breed == null || birth == null || reserveDNI == null) {
             throw new DogNotValidException();
         }
     }

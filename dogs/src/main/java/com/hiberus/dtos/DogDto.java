@@ -15,5 +15,5 @@ public class DogDto {
     private String name;
     private Breed breed;
     private Date birth;
-    private Boolean reserved;
+    private String reserveDNI;
 }
