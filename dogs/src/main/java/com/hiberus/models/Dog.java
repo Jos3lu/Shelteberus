@@ -33,12 +33,16 @@ public class Dog {
     private Date birth;
 
     @Setter
-    @Column(name = "reserve_dni")
-    private String reserveDNI;
+    @Column(name = "reserve_id")
+    private Long reserveId;
 
-    void validDog() throws DogNotValidException {
-        if (name.isBlank() || breed == null || birth == null || reserveDNI == null) {
+    public void validDog() throws DogNotValidException {
+        if (name.isBlank() || breed == null || birth == null || reserveId == null) {
             throw new DogNotValidException();
         }
+    }
+
+    public boolean dogAlreadyReserved() {
+        return reserveId != null;
     }
 }
