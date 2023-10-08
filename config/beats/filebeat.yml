@@ -3,7 +3,7 @@ filebeat.inputs:
     id: app-logs
     enabled: true
     paths:
-      - '/var/log/app_logs/*.log'
+      - '/var/log/app_logs/dogs/*.log'
 
 output.logstash:
   hosts: ['${LOGSTASH_HOST:localhost:5085}']

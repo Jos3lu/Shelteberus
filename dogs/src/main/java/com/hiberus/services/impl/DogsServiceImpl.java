@@ -18,6 +18,7 @@ public class DogsServiceImpl implements DogsService {
 
     @Override
     public List<Dog> getDogs() {
+        log.info("Dogs sent");
         return dogsRepository.findAll();
     }
 

@@ -4,7 +4,7 @@ import com.hiberus.dtos.DogDto;
 import com.hiberus.exceptions.DogNotFoundException;
 import com.hiberus.mappers.DogsMapper;
 import com.hiberus.services.DogsService;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class DogsController {
     private DogsMapper dogsMapper;
 
     @GetMapping
-    @ApiOperation(value = "Get dogs")
+    @Operation(summary = "Get dogs")
     ResponseEntity<List<DogDto>> getDogs() {
         List<DogDto> dogsDto = dogsService.getDogs().stream()
                 .map(dogsMapper::dogToDto)
@@ -29,7 +29,7 @@ public class DogsController {
     }
 
     @GetMapping(value = "/{dogId}")
-    @ApiOperation(value = "Get dog by ID")
+    @Operation(summary = "Get a dog by its ID")
     ResponseEntity<DogDto> getDog(@PathVariable Long dogId) {
         try {
             return ResponseEntity.ok(dogsMapper.dogToDto(dogsService.getDog(dogId)));
