@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: volunteers
+  cloud:
+    config:
+      uri: http://localhost:8888
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  file:
+    path: './logs/${spring.application.name}'
+    name: ${logging.file.path}/my-app.log
