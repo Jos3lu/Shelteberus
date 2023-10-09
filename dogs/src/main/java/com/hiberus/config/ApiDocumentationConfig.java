@@ -19,5 +19,4 @@ public class ApiDocumentationConfig {
                                 .name("Jose Luis")
                                 .email("jlsierra@hiberus.com")));
     }
-
 }

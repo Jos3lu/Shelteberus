@@ -60,6 +60,7 @@ public class DogsServiceImpl implements DogsService {
             DogAlreadyReserved, UserNotFoundException {
         Dog dog = getDog(dogId);
         if (dog.dogAlreadyReserved()) throw new DogAlreadyReserved();
+
         UserResponseDto userResponseDto = usersService.getUser(userId);
         dog.setReserveId(userResponseDto.getId());
         log.info("Dog {} reserved", dog.getId());
@@ -72,5 +73,13 @@ public class DogsServiceImpl implements DogsService {
         dog.setReserveId(null);
         log.info("Reserve of {} cancelled", dog.getId());
         return dogsRepository.save(dog);
+    }
+
+    @Override
+    public void deleteDog(Long dogId) {
+        if (dogsRepository.existsById(dogId)) {
+            log.info("Dog {} deleted", dogId);
+            dogsRepository.deleteById(dogId);
+        }
     }
 }

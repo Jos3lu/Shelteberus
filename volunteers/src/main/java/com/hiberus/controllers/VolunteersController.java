@@ -4,7 +4,7 @@ import com.hiberus.dtos.VolunteerDogsResponseDto;
 import com.hiberus.dtos.VolunteerRequestDto;
 import com.hiberus.dtos.VolunteerResponseDto;
 import com.hiberus.exceptions.DogNotFoundException;
-import com.hiberus.exceptions.VolunteerAlreadyExists;
+import com.hiberus.exceptions.VolunteerAlreadyExistsException;
 import com.hiberus.exceptions.VolunteerNotFoundException;
 import com.hiberus.exceptions.VolunteerNotValidException;
 import com.hiberus.mappers.VolunteersMapper;
@@ -73,7 +73,7 @@ public class VolunteersController {
                     HttpStatus.CREATED);
         } catch (VolunteerNotValidException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        } catch (VolunteerAlreadyExists e) {
+        } catch (VolunteerAlreadyExistsException e) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }

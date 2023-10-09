@@ -4,6 +4,7 @@ import com.hiberus.client.ClientDogs;
 import com.hiberus.dtos.DogResponseDto;
 import com.hiberus.exceptions.DogNotFoundException;
 import com.hiberus.services.DogsService;
+import feign.FeignException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,20 +21,17 @@ public class DogsServiceImpl implements DogsService {
 
     @Override
     @CircuitBreaker(name = "get-dog", fallbackMethod = "fallBackGetDog")
-    public DogResponseDto getDog(Long dogId) {
-        return clientDogs.getDog(dogId).getBody();
+    public DogResponseDto getDog(Long dogId) throws DogNotFoundException {
+        try {
+            return clientDogs.getDog(dogId).getBody();
+        } catch (FeignException.NotFound e) {
+            throw new DogNotFoundException(dogId);
+        }
     }
 
     public DogResponseDto fallBackGetDog(Long dogId, Throwable throwable) throws DogNotFoundException {
-        if (throwable.getClass().equals(DogNotFoundException.class)) {
-            throw new DogNotFoundException(dogId);
-        }
-
-        log.warn("Sent default dog");
-        return DogResponseDto.builder()
-                .id(-1L)
-                .name("Default dog")
-                .build();
+        log.warn("Sent dog not found");
+        throw new DogNotFoundException(dogId);
     }
 
     @Override

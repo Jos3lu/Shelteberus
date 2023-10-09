@@ -65,4 +65,11 @@ public interface DogsService {
      * @return Dog
      */
     Dog cancelReserve(Long dogId) throws DogNotFoundException;
+
+    /**
+     * Delete an existing dog
+     *
+     * @param dogId Dog ID
+     */
+    void deleteDog(Long dogId);
 }

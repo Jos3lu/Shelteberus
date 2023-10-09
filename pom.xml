@@ -21,6 +21,8 @@
       <module>gateway-server</module>
     <module>dogs</module>
       <module>volunteers</module>
+      <module>users</module>
+    <module>adoptions</module>
   </modules>
 
   <properties>

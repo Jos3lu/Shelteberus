@@ -21,13 +21,13 @@ public class UsersServiceImpl implements UsersService {
     public UserResponseDto getUser(Long userId) throws UserNotFoundException {
         try {
             return clientUsers.getUser(userId).getBody();
-        } catch (FeignException e) {
+        } catch (FeignException.NotFound e) {
             throw new UserNotFoundException(userId);
         }
     }
 
     public UserResponseDto fallBackGetUser(Long userId, Throwable throwable) throws UserNotFoundException {
-        log.warn("User not found exception sent");
+        log.warn("Sent user not found");
         throw new UserNotFoundException(userId);
     }
 }

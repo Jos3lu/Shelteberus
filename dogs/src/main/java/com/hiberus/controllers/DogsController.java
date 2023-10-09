@@ -34,9 +34,9 @@ public class DogsController {
         return ResponseEntity.ok(dogToDtoResponse(dogsService.getDogs()));
     }
 
-    @GetMapping(value = "/{userId}")
+    @GetMapping(value = "/reserved-dogs")
     @Operation(summary = "Get dogs reserved by a user")
-    ResponseEntity<List<DogResponseDto>> getUserReservedDogs(@PathVariable Long userId) {
+    ResponseEntity<List<DogResponseDto>> getUserReservedDogs(@RequestParam Long userId) {
         return ResponseEntity.ok(dogToDtoResponse(dogsService.getUserReservedDogs(userId)));
     }
 
@@ -75,6 +75,14 @@ public class DogsController {
         } catch (DogNotValidException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @DeleteMapping(value = "/{dogId}")
+    @Operation(summary = "Delete an existing dog")
+    @ApiResponse(responseCode = "204", description = "Successfully deleted")
+    ResponseEntity<Void> deleteDog(@PathVariable Long dogId) {
+        dogsService.deleteDog(dogId);
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping(value = "/reserve-dog")

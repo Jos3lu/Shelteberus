@@ -1,7 +1,7 @@
 package com.hiberus.services;
 
 import com.hiberus.exceptions.DogNotFoundException;
-import com.hiberus.exceptions.VolunteerAlreadyExists;
+import com.hiberus.exceptions.VolunteerAlreadyExistsException;
 import com.hiberus.exceptions.VolunteerNotFoundException;
 import com.hiberus.exceptions.VolunteerNotValidException;
 import com.hiberus.models.Volunteer;
@@ -24,7 +24,7 @@ public interface VolunteersService {
      * @param volunteer Volunteer
      * @return Volunteer
      */
-    Volunteer createVolunteer(Volunteer volunteer) throws VolunteerNotValidException, VolunteerAlreadyExists;
+    Volunteer createVolunteer(Volunteer volunteer) throws VolunteerNotValidException, VolunteerAlreadyExistsException;
 
     /**
      * Update volunteer by ID

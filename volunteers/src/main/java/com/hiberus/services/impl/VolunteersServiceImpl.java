@@ -1,14 +1,14 @@
 package com.hiberus.services.impl;
 
+import com.hiberus.dtos.DogResponseDto;
 import com.hiberus.exceptions.DogNotFoundException;
-import com.hiberus.exceptions.VolunteerAlreadyExists;
+import com.hiberus.exceptions.VolunteerAlreadyExistsException;
 import com.hiberus.exceptions.VolunteerNotFoundException;
 import com.hiberus.exceptions.VolunteerNotValidException;
 import com.hiberus.models.Volunteer;
 import com.hiberus.repositories.VolunteersRepository;
 import com.hiberus.services.DogsService;
 import com.hiberus.services.VolunteersService;
-import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,10 +37,10 @@ public class VolunteersServiceImpl implements VolunteersService {
     }
 
     @Override
-    public Volunteer createVolunteer(Volunteer volunteer) throws VolunteerNotValidException, VolunteerAlreadyExists {
+    public Volunteer createVolunteer(Volunteer volunteer) throws VolunteerNotValidException, VolunteerAlreadyExistsException {
         volunteer.validVolunteer();
         if (volunteersRepository.existsByName(volunteer.getName())) {
-            throw new VolunteerAlreadyExists(volunteer.getName());
+            throw new VolunteerAlreadyExistsException(volunteer.getName());
         }
         log.info("Volunteer {} created", volunteer.getName());
         return volunteersRepository.save(volunteer);
@@ -69,14 +69,12 @@ public class VolunteersServiceImpl implements VolunteersService {
 
     @Override
     public Volunteer addDogToVolunteer(Long volunteerId, Long dogId) throws VolunteerNotFoundException, DogNotFoundException {
+        // Get volunteer & dog
         Volunteer volunteer = getVolunteer(volunteerId);
-        try {
-            dogsService.getDog(dogId);
-        } catch (FeignException.NotFound e) {
-            throw new DogNotFoundException(dogId);
-        }
+        DogResponseDto dogResponseDto = dogsService.getDog(dogId);
+        // Add dog to volunteer
+        volunteer.getDogs().add(dogResponseDto.getId());
 
-        volunteer.getDogs().add(dogId);
         return volunteersRepository.save(volunteer);
     }
 
