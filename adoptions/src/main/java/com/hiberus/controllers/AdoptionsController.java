@@ -32,7 +32,7 @@ public class AdoptionsController {
         return ResponseEntity.ok(adoptionToDtoResponse(adoptionsService.getAdoptions()));
     }
 
-    @GetMapping(value = "/adoptions-user/{userId}")
+    @GetMapping(value = "/user/{userId}")
     @Operation(summary = "Get adoptions associated to a user")
     ResponseEntity<List<AdoptionResponseDto>> getAdoptionsByUser(@PathVariable Long userId) {
         return ResponseEntity.ok(adoptionToDtoResponse(adoptionsService.getAdoptionsByUser(userId)));
