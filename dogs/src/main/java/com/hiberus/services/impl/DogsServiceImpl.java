@@ -1,6 +1,6 @@
 package com.hiberus.services.impl;
 
-import com.hiberus.dtos.UserDto;
+import com.hiberus.dtos.UserResponseDto;
 import com.hiberus.exceptions.DogAlreadyReserved;
 import com.hiberus.exceptions.DogNotFoundException;
 import com.hiberus.exceptions.DogNotValidException;
@@ -37,6 +37,12 @@ public class DogsServiceImpl implements DogsService {
     }
 
     @Override
+    public List<Dog> getVolunteerDogs(List<Long> dogsId) {
+        log.info("Dogs associated to a volunteer sent");
+        return dogsRepository.findAllById(dogsId);
+    }
+
+    @Override
     public Dog getDog(Long dogId) throws DogNotFoundException {
         return dogsRepository.findById(dogId)
                 .orElseThrow(() -> new DogNotFoundException(dogId));
@@ -45,7 +51,7 @@ public class DogsServiceImpl implements DogsService {
     @Override
     public Dog createDog(Dog dog) throws DogNotValidException {
         dog.validDog();
-        log.info("Dog created");
+        log.info("Dog {} created", dog.getName());
         return dogsRepository.save(dog);
     }
 
@@ -54,8 +60,9 @@ public class DogsServiceImpl implements DogsService {
             DogAlreadyReserved, UserNotFoundException {
         Dog dog = getDog(dogId);
         if (dog.dogAlreadyReserved()) throw new DogAlreadyReserved();
-        UserDto userDto = usersService.getUser(userId);
-        dog.setReserveId(userDto.getId());
+        UserResponseDto userResponseDto = usersService.getUser(userId);
+        dog.setReserveId(userResponseDto.getId());
+        log.info("Dog {} reserved", dog.getId());
         return dogsRepository.save(dog);
     }
 
@@ -63,6 +70,7 @@ public class DogsServiceImpl implements DogsService {
     public Dog cancelReserve(Long dogId) throws DogNotFoundException {
         Dog dog = getDog(dogId);
         dog.setReserveId(null);
+        log.info("Reserve of {} cancelled", dog.getId());
         return dogsRepository.save(dog);
     }
 }

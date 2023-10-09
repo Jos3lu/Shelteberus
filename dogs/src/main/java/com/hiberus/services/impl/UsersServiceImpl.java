@@ -1,7 +1,7 @@
 package com.hiberus.services.impl;
 
 import com.hiberus.client.ClientUsers;
-import com.hiberus.dtos.UserDto;
+import com.hiberus.dtos.UserResponseDto;
 import com.hiberus.exceptions.UserNotFoundException;
 import com.hiberus.services.UsersService;
 import feign.FeignException;
@@ -16,8 +16,9 @@ public class UsersServiceImpl implements UsersService {
     @Autowired
     private ClientUsers clientUsers;
 
+    @Override
     @CircuitBreaker(name = "users", fallbackMethod = "fallBackGetUser")
-    public UserDto getUser(Long userId) throws UserNotFoundException {
+    public UserResponseDto getUser(Long userId) throws UserNotFoundException {
         try {
             return clientUsers.getUser(userId).getBody();
         } catch (FeignException e) {
@@ -25,7 +26,8 @@ public class UsersServiceImpl implements UsersService {
         }
     }
 
-    public UserDto fallBackGetUser(Long userId, Throwable throwable) throws UserNotFoundException {
+    public UserResponseDto fallBackGetUser(Long userId, Throwable throwable) throws UserNotFoundException {
+        log.warn("User not found exception sent");
         throw new UserNotFoundException(userId);
     }
 }

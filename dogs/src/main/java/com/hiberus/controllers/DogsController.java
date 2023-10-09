@@ -1,6 +1,7 @@
 package com.hiberus.controllers;
 
-import com.hiberus.dtos.DogDto;
+import com.hiberus.dtos.DogRequestDto;
+import com.hiberus.dtos.DogResponseDto;
 import com.hiberus.exceptions.DogAlreadyReserved;
 import com.hiberus.exceptions.DogNotFoundException;
 import com.hiberus.exceptions.DogNotValidException;
@@ -29,26 +30,33 @@ public class DogsController {
 
     @GetMapping
     @Operation(summary = "Get dogs")
-    ResponseEntity<List<DogDto>> getDogs() {
-        return ResponseEntity.ok(dogToDto(dogsService.getDogs()));
+    ResponseEntity<List<DogResponseDto>> getDogs() {
+        return ResponseEntity.ok(dogToDtoResponse(dogsService.getDogs()));
     }
 
     @GetMapping(value = "/{userId}")
-    ResponseEntity<List<DogDto>> getUserReservedDogs(@PathVariable Long userId) {
-        return ResponseEntity.ok(dogToDto(dogsService.getUserReservedDogs(userId)));
+    @Operation(summary = "Get dogs reserved by a user")
+    ResponseEntity<List<DogResponseDto>> getUserReservedDogs(@PathVariable Long userId) {
+        return ResponseEntity.ok(dogToDtoResponse(dogsService.getUserReservedDogs(userId)));
     }
 
-    private List<DogDto> dogToDto(List<Dog> dogs) {
+    @GetMapping(value = "/volunteer-dogs")
+    @Operation(summary = "Get dogs taken care of by a volunteer")
+    ResponseEntity<List<DogResponseDto>> getVolunteerDogs(@RequestParam List<Long> dogsId) {
+        return ResponseEntity.ok(dogToDtoResponse(dogsService.getVolunteerDogs(dogsId)));
+    }
+
+    private List<DogResponseDto> dogToDtoResponse(List<Dog> dogs) {
         return dogs.stream()
-                .map(dogsMapper::dogToDto)
+                .map(dogsMapper::dogToDtoResponse)
                 .toList();
     }
 
     @GetMapping(value = "/{dogId}")
     @Operation(summary = "Get a dog by its ID")
-    ResponseEntity<DogDto> getDog(@PathVariable Long dogId) {
+    ResponseEntity<DogResponseDto> getDog(@PathVariable Long dogId) {
         try {
-            return ResponseEntity.ok(dogsMapper.dogToDto(dogsService.getDog(dogId)));
+            return ResponseEntity.ok(dogsMapper.dogToDtoResponse(dogsService.getDog(dogId)));
         } catch (DogNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
@@ -60,10 +68,10 @@ public class DogsController {
             @ApiResponse(responseCode = "201", description = "Successfully created"),
             @ApiResponse(responseCode = "409", description = "Already exists", content = @Content)
     })
-    ResponseEntity<DogDto> createDog(@RequestBody DogDto dogDto) {
+    ResponseEntity<DogResponseDto> createDog(@RequestBody DogRequestDto dogRequestDto) {
         try {
-            return new ResponseEntity<>(dogsMapper.dogToDto(dogsService
-                    .createDog(dogsMapper.dtoToDog(dogDto))), HttpStatus.CREATED);
+            return new ResponseEntity<>(dogsMapper.dogToDtoResponse(dogsService
+                    .createDog(dogsMapper.dtoRequestToDog(dogRequestDto))), HttpStatus.CREATED);
         } catch (DogNotValidException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -72,9 +80,9 @@ public class DogsController {
     @PutMapping(value = "/reserve-dog")
     @Operation(summary = "Make a reservation for a dog")
     @ApiResponse(responseCode = "200", description = "Successfully reserved")
-    ResponseEntity<DogDto> reserveDog(@RequestParam Long dogId, @RequestParam Long userId) {
+    ResponseEntity<DogResponseDto> reserveDog(@RequestParam Long dogId, @RequestParam Long userId) {
         try {
-            return ResponseEntity.ok(dogsMapper.dogToDto(dogsService.reserveDog(dogId, userId)));
+            return ResponseEntity.ok(dogsMapper.dogToDtoResponse(dogsService.reserveDog(dogId, userId)));
         } catch (DogNotFoundException | UserNotFoundException e) {
             return ResponseEntity.notFound().build();
         } catch (DogAlreadyReserved e) {
@@ -85,9 +93,9 @@ public class DogsController {
     @PutMapping(value = "/cancel-reserve")
     @Operation(summary = "Cancel a previous reserve")
     @ApiResponse(responseCode = "200", description = "Reservation successfully cancelled")
-    ResponseEntity<DogDto> cancelReserve(@RequestParam Long dogId) {
+    ResponseEntity<DogResponseDto> cancelReserve(@RequestParam Long dogId) {
         try {
-            return ResponseEntity.ok(dogsMapper.dogToDto(dogsService.cancelReserve(dogId)));
+            return ResponseEntity.ok(dogsMapper.dogToDtoResponse(dogsService.cancelReserve(dogId)));
         } catch (DogNotFoundException e) {
             return ResponseEntity.notFound().build();
         }

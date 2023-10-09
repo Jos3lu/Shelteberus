@@ -24,6 +24,14 @@ public interface DogsService {
     List<Dog> getUserReservedDogs(Long userId);
 
     /**
+     * Get dogs taken care of by a volunteer
+     *
+     * @param dogsId List of dogs ID
+     * @return List of dogs
+     */
+    List<Dog> getVolunteerDogs(List<Long> dogsId);
+
+    /**
      * Get dog by ID
      *
      * @param dogId Dog ID
