@@ -1,17 +1,19 @@
 package com.hiberus.controllers;
 
+import com.hiberus.dtos.AdoptionRequestDto;
 import com.hiberus.dtos.AdoptionResponseDto;
-import com.hiberus.exceptions.AdoptionNotFoundException;
+import com.hiberus.exceptions.*;
 import com.hiberus.mappers.Adoptionsmapper;
 import com.hiberus.models.Adoption;
 import com.hiberus.services.AdoptionsService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,16 +29,13 @@ public class AdoptionsController {
     @GetMapping
     @Operation(summary = "Get adoptions")
     ResponseEntity<List<AdoptionResponseDto>> getAdoptions() {
-        List<AdoptionResponseDto> adoptionResponseDtos = adoptionsService.getAdoptions().stream()
-                .map(adoptionsmapper::adoptionToDtoResponse)
-                .toList();
-        return ResponseEntity.ok(adoptionResponseDtos);
+        return ResponseEntity.ok(adoptionToDtoResponse(adoptionsService.getAdoptions()));
     }
 
     @GetMapping(value = "/adoptions-user/{userId}")
     @Operation(summary = "Get adoptions associated to a user")
     ResponseEntity<List<AdoptionResponseDto>> getAdoptionsByUser(@PathVariable Long userId) {
-        return
+        return ResponseEntity.ok(adoptionToDtoResponse(adoptionsService.getAdoptionsByUser(userId)));
     }
 
     private List<AdoptionResponseDto> adoptionToDtoResponse(List<Adoption> adoptions) {
@@ -56,4 +55,21 @@ public class AdoptionsController {
         }
     }
 
+    @PostMapping
+    @Operation(summary = "Create a new adoption")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Successfully created"),
+            @ApiResponse(responseCode = "409", description = "Already exists", content = @Content)
+    })
+    ResponseEntity<AdoptionResponseDto> createAdoption(@RequestBody AdoptionRequestDto adoptionRequestDto) {
+        try {
+            return new ResponseEntity<>(adoptionsmapper.adoptionToDtoResponse(adoptionsService
+                    .createAdoption(adoptionsmapper.dtoRequestToAdoption(adoptionRequestDto))),
+                    HttpStatus.CREATED);
+        } catch (UserNotFoundException | DogNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        } catch (AdoptionAlreadyExistsException | UserNotReservedDogException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
