@@ -4,6 +4,7 @@ import com.hiberus.exceptions.VolunteerNotValidException;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.regex.Pattern;
 
 @Getter
@@ -26,6 +27,10 @@ public class Volunteer {
     @Setter
     @Column(name = "phone")
     private String phone;
+
+    @Setter
+    @Column(name = "dogs")
+    private List<Long> dogs;
 
     public void validVolunteer() throws VolunteerNotValidException {
         // Example: +34 274 38 92 14

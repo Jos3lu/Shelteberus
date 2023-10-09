@@ -8,7 +8,7 @@ public interface UsersService {
      * Get user by ID
      *
      * @param userId User ID
-     * @return UserDto
+     * @return User
      * @throws UserNotFoundException User not found
      */
     UserResponseDto getUser(Long userId) throws UserNotFoundException;
