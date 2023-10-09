@@ -49,7 +49,7 @@ public class VolunteersController {
             // Get volunteer
             Volunteer volunteer = volunteersService.getVolunteer(volunteerId);
             VolunteerDogsResponseDto volunteerDogsResponseDto = volunteersMapper
-                    .volunteerToVolunteerDogsResponseDto(volunteer);
+                    .volunteerToVolunteerDogsDtoResponse(volunteer);
 
             // Get dogs associated to volunteer
             volunteerDogsResponseDto.setDogs(dogsService.getVolunteerDogs(volunteer.getDogs()));

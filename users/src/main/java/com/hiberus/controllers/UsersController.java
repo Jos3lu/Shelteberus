@@ -32,7 +32,7 @@ public class UsersController {
     @Operation(summary = "Get users")
     ResponseEntity<List<UserResponseDto>> getusers() {
         List<UserResponseDto> userResponseDtos = usersService.getUsers().stream()
-                .map(usersMapper::userToResponseDto)
+                .map(usersMapper::userToDtoResponse)
                 .toList();
         return ResponseEntity.ok(userResponseDtos);
     }
@@ -41,7 +41,7 @@ public class UsersController {
     @Operation(summary = "Get user by ID")
     ResponseEntity<UserResponseDto> getUser(@PathVariable Long userId) {
         try {
-            return ResponseEntity.ok(usersMapper.userToResponseDto(usersService.getUser(userId)));
+            return ResponseEntity.ok(usersMapper.userToDtoResponse(usersService.getUser(userId)));
         } catch (UserNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
@@ -55,7 +55,7 @@ public class UsersController {
     })
     ResponseEntity<UserResponseDto> createUser(@RequestBody UserRequestDto userRequestDto) {
         try {
-            return new ResponseEntity<>(usersMapper.userToResponseDto(usersService
+            return new ResponseEntity<>(usersMapper.userToDtoResponse(usersService
                     .createUser(usersMapper.dtoRequestToUser(userRequestDto))), HttpStatus.CREATED);
         } catch (UserNotValidException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -68,7 +68,7 @@ public class UsersController {
     @Operation(summary = "Update an existing user")
     ResponseEntity<UserResponseDto> updateUser(@PathVariable Long userId, @RequestBody UserRequestDto userRequestDto) {
         try {
-            return ResponseEntity.ok(usersMapper.userToResponseDto(usersService
+            return ResponseEntity.ok(usersMapper.userToDtoResponse(usersService
                     .updateUser(userId, usersMapper.dtoRequestToUser(userRequestDto))));
         } catch (UserNotFoundException e) {
             return ResponseEntity.notFound().build();

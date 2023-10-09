@@ -1,5 +1,6 @@
 package com.hiberus.services.impl;
 
+import com.hiberus.exceptions.AdoptionNotFoundException;
 import com.hiberus.models.Adoption;
 import com.hiberus.repositories.AdoptionsRepository;
 import com.hiberus.services.AdoptionsService;
@@ -19,5 +20,11 @@ public class AdoptionsServiceImpl implements AdoptionsService {
     public List<Adoption> getAdoptions() {
         log.info("Adoptions sent");
         return adoptionsRepository.findAll();
+    }
+
+    @Override
+    public Adoption getAdoption(Long adoptionId) throws AdoptionNotFoundException {
+        return adoptionsRepository.findById(adoptionId)
+                .orElseThrow(() -> new AdoptionNotFoundException(adoptionId));
     }
 }

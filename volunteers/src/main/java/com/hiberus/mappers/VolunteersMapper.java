@@ -10,5 +10,5 @@ import org.mapstruct.Mapper;
 public interface VolunteersMapper {
     Volunteer dtoRequestToVolunteer(VolunteerRequestDto volunteerRequestDto);
     VolunteerResponseDto volunteerToDtoResponse(Volunteer volunteer);
-    VolunteerDogsResponseDto volunteerToVolunteerDogsResponseDto(Volunteer volunteer);
+    VolunteerDogsResponseDto volunteerToVolunteerDogsDtoResponse(Volunteer volunteer);
 }

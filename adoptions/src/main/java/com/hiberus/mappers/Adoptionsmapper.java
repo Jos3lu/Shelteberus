@@ -8,5 +8,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface Adoptionsmapper {
     Adoption dtoRequestToAdoption(AdoptionRequestDto adoptionRequestDto);
-    AdoptionResponseDto adoptionToResponseDto(Adoption adoption);
+    AdoptionResponseDto adoptionToDtoResponse(Adoption adoption);
 }
