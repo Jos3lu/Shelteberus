@@ -66,10 +66,10 @@ public class VolunteersController {
             @ApiResponse(responseCode = "201", description = "Successfully created"),
             @ApiResponse(responseCode = "409", description = "Already exists", content = @Content)
     })
-    ResponseEntity<VolunteerResponseDto> createVolunteer(@RequestBody VolunteerRequestDto volunteerResponseDto) {
+    ResponseEntity<VolunteerResponseDto> createVolunteer(@RequestBody VolunteerRequestDto volunteerRequestDto) {
         try {
             return new ResponseEntity<>(volunteersMapper.volunteerToDtoResponse(volunteersService
-                    .createVolunteer(volunteersMapper.dtoRequestToVolunteer(volunteerResponseDto))),
+                    .createVolunteer(volunteersMapper.dtoRequestToVolunteer(volunteerRequestDto))),
                     HttpStatus.CREATED);
         } catch (VolunteerNotValidException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
