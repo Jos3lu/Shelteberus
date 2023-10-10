@@ -32,7 +32,7 @@ node {
    echo 'Buildear la imagen'
    dockerImage = docker.build("jos3lu/shelteberus:latest")
    echo 'Subir imagen a DockerHub'
-   withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+   withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
       dockerImage.push()
    }
 }
