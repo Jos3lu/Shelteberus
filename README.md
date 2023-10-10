@@ -36,12 +36,44 @@
 ### Gateway
 - A simple, yet effective way to route to APIs
 - Retrieve data from multiple services with a single request
-- [Gateway URL](http://localhost:9000/)
+- [Gateway URL](http://localhost:8081/)
 
 ### Zipkin
 - Distributed tracing
 - Provides mechanisms for sending, receiving, storing & visualizing traces
 - [Zipkin URL](http://localhost:9411/)
+
+### Prometheus
+- Open-source monitoring solution for collecting and aggregating metrics as time series data
+- Each item in a Prometheus store is a metric event accompanied by the timestamp it occurred
+- [Prometheus URL](http://localhost:9090/)
+
+### Grafana
+- Tool for visualizing and analyzing data from various sources
+- Lets you keep tabs on application performance and error rates
+- [Grafana URL](http://localhost:3000/)
+
+### Filebeat
+- Lightweight shipper for forwarding and centralizing log data
+- Can send data directly to Elasticsearch or via Logstash
+
+### Logstash
+- Tool that can extract, transform, and load the data using filters and plugins
+- It collects data from different sources and send to multiple destinations
+
+### Elasticsearch
+- An open-source search and analytics engine
+- Proficient in managing colossal volumes of data, delivering the precise information we seek
+
+### Kibana
+- An open-source data visualization dashboard for Elasticsearch
+- It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster
+- [Kibana URL](http://localhost:5601/)
+
+### Jenkins
+- Tool used for automation
+- Open-source server that allows all the developers to build, test and deploy software
+- [Jenkins URL](http://localhost:8080/)
 
 ### Users API
 - Get users
