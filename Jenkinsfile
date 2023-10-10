@@ -26,16 +26,6 @@ node {
    sh 'mvn install -Dmaven.test.skip=true'
    step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
 
-   // Etapa: Build Imagen
-
-   stage 'Build Imagen y subir a DockerHub'
-   echo 'Buildear la imagen'
-   dockerImage = docker.build("jos3lu/shelteberus:latest")
-   echo 'Subir imagen a DockerHub'
-   withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-      dockerImage.push()
-   }
-
    //  ETAPA: ejecutar contenedores
 
    stage 'Ejecutando contenedores'
