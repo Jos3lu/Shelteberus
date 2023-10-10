@@ -1,4 +1,4 @@
-# Shelteberus: Spring Cloud Project with Prometheus/Grafana, ELK, Sonar & Jenkins
+# Shelteberus: Spring Cloud Project (Prometheus/Grafana, ELK, Sonar & Jenkins)
 
 ![diagram.png](images/diagram.png)
 
