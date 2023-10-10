@@ -30,7 +30,7 @@ node {
 
    stage 'Build Imagen y subir a DockerHub'
    echo 'Buildear la imagen'
-   dockerImage = docker.build("jos3lu/shelteberus:latest")
+   dockerImage = sh 'docker build -t jos3lu/shelteberus:latest -f dogs/Dockerfile .'
    echo 'Subir imagen a DockerHub'
    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
       dockerImage.push()

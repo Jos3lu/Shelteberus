@@ -1,3 +1,7 @@
 FROM openjdk:17
-ADD target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ADD dogs/target/*.jar dogs.jar
+ADD volunteers/target/*.jar volunteers.jar
+ADD users/target/*.jar users.jar
+ADD adoptions/target/*.jar adoptions.jar
+
+ENTRYPOINT ["bash", "start.sh"]
