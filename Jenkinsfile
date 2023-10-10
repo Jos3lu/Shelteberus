@@ -30,16 +30,10 @@ node {
 
    stage 'Build Imagen y subir a DockerHub'
    echo 'Buildear la imagen'
-   dockerImage1 = docker.build("jos3lu/shelteberus:latest ./dogs")
-   dockerImage2 = docker.build("jos3lu/shelteberus:latest ./volunteers")
-   dockerImage3 = docker.build("jos3lu/shelteberus:latest ./users")
-   dockerImage4 = docker.build("jos3lu/shelteberus:latest ./adoptions")
+   dockerImage = docker.build("jos3lu/shelteberus:latest")
    echo 'Subir imagen a DockerHub'
    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-      dockerImage1.push()
-      dockerImage2.push()
-      dockerImage3.push()
-      dockerImage4.push()
+      dockerImage.push()
    }
 
    //  ETAPA: ejecutar contenedores
