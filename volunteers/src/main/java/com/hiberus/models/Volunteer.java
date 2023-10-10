@@ -30,6 +30,7 @@ public class Volunteer {
 
     @Setter
     @Column(name = "dogs")
+    @ElementCollection
     private List<Long> dogs;
 
     public void validVolunteer() throws VolunteerNotValidException {

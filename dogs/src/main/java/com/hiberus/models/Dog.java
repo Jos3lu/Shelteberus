@@ -5,7 +5,7 @@ import com.hiberus.exceptions.DogNotValidException;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
@@ -30,14 +30,14 @@ public class Dog {
 
     @Setter
     @Column(name = "birth")
-    private Date birth;
+    private LocalDate birth;
 
     @Setter
     @Column(name = "reserve_id")
     private Long reserveId;
 
     public void validDog() throws DogNotValidException {
-        if (name.isBlank() || breed == null || birth == null || reserveId == null)
+        if (name.isBlank() || breed == null || birth == null)
             throw new DogNotValidException();
     }
 

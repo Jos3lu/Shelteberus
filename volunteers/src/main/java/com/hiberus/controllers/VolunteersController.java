@@ -3,10 +3,7 @@ package com.hiberus.controllers;
 import com.hiberus.dtos.VolunteerDogsResponseDto;
 import com.hiberus.dtos.VolunteerRequestDto;
 import com.hiberus.dtos.VolunteerResponseDto;
-import com.hiberus.exceptions.DogNotFoundException;
-import com.hiberus.exceptions.VolunteerAlreadyExistsException;
-import com.hiberus.exceptions.VolunteerNotFoundException;
-import com.hiberus.exceptions.VolunteerNotValidException;
+import com.hiberus.exceptions.*;
 import com.hiberus.mappers.VolunteersMapper;
 import com.hiberus.models.Volunteer;
 import com.hiberus.services.DogsService;
@@ -106,6 +103,8 @@ public class VolunteersController {
                     .addDogToVolunteer(volunteerId, dogId)));
         } catch (VolunteerNotFoundException | DogNotFoundException e) {
             return ResponseEntity.notFound().build();
+        } catch (DogAlreadyAssociatedToVolunteerException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 

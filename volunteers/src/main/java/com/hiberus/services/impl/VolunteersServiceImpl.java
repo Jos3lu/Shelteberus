@@ -1,10 +1,7 @@
 package com.hiberus.services.impl;
 
 import com.hiberus.dtos.DogResponseDto;
-import com.hiberus.exceptions.DogNotFoundException;
-import com.hiberus.exceptions.VolunteerAlreadyExistsException;
-import com.hiberus.exceptions.VolunteerNotFoundException;
-import com.hiberus.exceptions.VolunteerNotValidException;
+import com.hiberus.exceptions.*;
 import com.hiberus.models.Volunteer;
 import com.hiberus.repositories.VolunteersRepository;
 import com.hiberus.services.DogsService;
@@ -68,11 +65,14 @@ public class VolunteersServiceImpl implements VolunteersService {
     }
 
     @Override
-    public Volunteer addDogToVolunteer(Long volunteerId, Long dogId) throws VolunteerNotFoundException, DogNotFoundException {
+    public Volunteer addDogToVolunteer(Long volunteerId, Long dogId) throws VolunteerNotFoundException,
+            DogNotFoundException, DogAlreadyAssociatedToVolunteerException {
         // Get volunteer & dog
         Volunteer volunteer = getVolunteer(volunteerId);
         DogResponseDto dogResponseDto = dogsService.getDog(dogId);
         // Add dog to volunteer
+        if (volunteer.getDogs().contains(dogResponseDto.getId()))
+            throw new DogAlreadyAssociatedToVolunteerException();
         volunteer.getDogs().add(dogResponseDto.getId());
 
         return volunteersRepository.save(volunteer);

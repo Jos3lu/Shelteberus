@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -53,7 +53,7 @@ public class AdoptionsServiceImpl implements AdoptionsService {
             throw new UserNotReservedDogException(adoption.getUserId(), adoption.getDogId());
         if (adoptionsRepository.existsByUserIdAndDogId(adoption.getUserId(), adoption.getDogId()))
             throw new AdoptionAlreadyExistsException();
-        adoption.setAdoptionDay(new Date(System.currentTimeMillis()));
+        adoption.setAdoptionDay(LocalDate.now());
         dogsService.deleteDog(adoption.getDogId());
 
         log.info("Adoption created");

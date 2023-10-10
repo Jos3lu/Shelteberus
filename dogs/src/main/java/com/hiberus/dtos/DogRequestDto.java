@@ -3,7 +3,7 @@ package com.hiberus.dtos;
 import com.hiberus.enums.Breed;
 import lombok.*;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -13,5 +13,5 @@ import java.sql.Date;
 public class DogRequestDto {
     private String name;
     private Breed breed;
-    private Date birth;
+    private LocalDate birth;
 }

@@ -2,7 +2,7 @@ package com.hiberus.dtos;
 
 import lombok.*;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -13,5 +13,5 @@ public class AdoptionResponseDto {
     private Long id;
     private Long userId;
     private Long dogId;
-    private Date adoptionDay;
+    private LocalDate adoptionDay;
 }

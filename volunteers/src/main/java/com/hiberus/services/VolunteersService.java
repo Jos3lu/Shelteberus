@@ -1,9 +1,6 @@
 package com.hiberus.services;
 
-import com.hiberus.exceptions.DogNotFoundException;
-import com.hiberus.exceptions.VolunteerAlreadyExistsException;
-import com.hiberus.exceptions.VolunteerNotFoundException;
-import com.hiberus.exceptions.VolunteerNotValidException;
+import com.hiberus.exceptions.*;
 import com.hiberus.models.Volunteer;
 
 import java.util.List;
@@ -49,7 +46,7 @@ public interface VolunteersService {
      * @param dogId Dog ID
      * @return Volunteer
      */
-    Volunteer addDogToVolunteer(Long volunteerId, Long dogId) throws VolunteerNotFoundException, DogNotFoundException;
+    Volunteer addDogToVolunteer(Long volunteerId, Long dogId) throws VolunteerNotFoundException, DogNotFoundException, DogAlreadyAssociatedToVolunteerException;
 
     /**
      * Remove dog from volunteer
