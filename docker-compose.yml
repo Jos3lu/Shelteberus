@@ -90,7 +90,6 @@ services:
       - ./config/logstash/app-logs.conf:/usr/share/logstash/pipeline/app-logs.conf:ro
       - ./config/logstash/templates:/usr/share/logstash/templates
 
-
   elasticsearch:
     image: elasticsearch:7.17.8
     container_name: elasticsearch
@@ -101,7 +100,6 @@ services:
       ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     volumes:
       - elasticsearch:/usr/share/elasticsearch/data
-
 
   kibana:
     image: kibana:7.17.8
