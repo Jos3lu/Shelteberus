@@ -9,6 +9,8 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface VolunteersMapper {
+    @Mapping(ignore = true, target = "id")
+    @Mapping(ignore = true, target = "dogs")
     Volunteer dtoRequestToVolunteer(VolunteerRequestDto volunteerRequestDto);
     VolunteerResponseDto volunteerToDtoResponse(Volunteer volunteer);
     @Mapping(target = "dogs", ignore = true)

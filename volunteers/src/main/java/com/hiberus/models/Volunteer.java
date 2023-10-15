@@ -34,6 +34,8 @@ public class Volunteer {
     private List<Long> dogs;
 
     public void validVolunteer() throws VolunteerNotValidException {
+        if (name == null || phone == null)
+            throw new VolunteerNotValidException();
         // Example: +34 274 38 92 14
         Pattern validPhone = Pattern.compile("^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$");
         if (name.isBlank() || phone.isBlank() || !validPhone.matcher(phone).find())

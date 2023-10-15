@@ -37,7 +37,9 @@ public class Dog {
     private Long reserveId;
 
     public void validDog() throws DogNotValidException {
-        if (name.isBlank() || breed == null || birth == null)
+        if (name == null || breed == null || birth == null)
+            throw new DogNotValidException();
+        if (name.isBlank())
             throw new DogNotValidException();
     }
 

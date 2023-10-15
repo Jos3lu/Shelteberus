@@ -3,7 +3,7 @@ package com.hiberus.controllers;
 import com.hiberus.dtos.AdoptionRequestDto;
 import com.hiberus.dtos.AdoptionResponseDto;
 import com.hiberus.exceptions.*;
-import com.hiberus.mappers.Adoptionsmapper;
+import com.hiberus.mappers.AdoptionsMapper;
 import com.hiberus.models.Adoption;
 import com.hiberus.services.AdoptionsService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,7 +24,7 @@ public class AdoptionsController {
     private AdoptionsService adoptionsService;
 
     @Autowired
-    private Adoptionsmapper adoptionsmapper;
+    private AdoptionsMapper adoptionsMapper;
 
     @GetMapping
     @Operation(summary = "Get adoptions")
@@ -40,7 +40,7 @@ public class AdoptionsController {
 
     private List<AdoptionResponseDto> adoptionToDtoResponse(List<Adoption> adoptions) {
         return adoptions.stream()
-                .map(adoptionsmapper::adoptionToDtoResponse)
+                .map(adoptionsMapper::adoptionToDtoResponse)
                 .toList();
     }
 
@@ -48,7 +48,7 @@ public class AdoptionsController {
     @Operation(summary = "Get adoption by ID")
     ResponseEntity<AdoptionResponseDto> getAdoption(@PathVariable Long adoptionId) {
         try {
-            return ResponseEntity.ok(adoptionsmapper.adoptionToDtoResponse(adoptionsService
+            return ResponseEntity.ok(adoptionsMapper.adoptionToDtoResponse(adoptionsService
                     .getAdoption(adoptionId)));
         } catch (AdoptionNotFoundException e) {
             return ResponseEntity.notFound().build();
@@ -63,8 +63,8 @@ public class AdoptionsController {
     })
     ResponseEntity<AdoptionResponseDto> createAdoption(@RequestBody AdoptionRequestDto adoptionRequestDto) {
         try {
-            return new ResponseEntity<>(adoptionsmapper.adoptionToDtoResponse(adoptionsService
-                    .createAdoption(adoptionsmapper.dtoRequestToAdoption(adoptionRequestDto))),
+            return new ResponseEntity<>(adoptionsMapper.adoptionToDtoResponse(adoptionsService
+                    .createAdoption(adoptionsMapper.dtoRequestToAdoption(adoptionRequestDto))),
                     HttpStatus.CREATED);
         } catch (UserNotFoundException | DogNotFoundException e) {
             return ResponseEntity.notFound().build();

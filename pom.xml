@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>com.hiberus</groupId>
-  <artifactId>Shelteberus</artifactId>
+  <artifactId>shelteberus</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
