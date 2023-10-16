@@ -4,6 +4,9 @@ filebeat.inputs:
     enabled: true
     paths:
       - '/var/log/app_logs/dogs/*.log'
+      - '/var/log/app_logs/volunteers/*.log'
+      - '/var/log/app_logs/users/*.log'
+      - '/var/log/app_logs/adoptions/*.log'
 
 output.logstash:
   hosts: ['${LOGSTASH_HOST:localhost:5085}']
