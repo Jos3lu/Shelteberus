@@ -30,7 +30,7 @@ public class UsersController {
 
     @GetMapping
     @Operation(summary = "Get users")
-    ResponseEntity<List<UserResponseDto>> getusers() {
+    ResponseEntity<List<UserResponseDto>> getUsers() {
         List<UserResponseDto> userResponseDtos = usersService.getUsers().stream()
                 .map(usersMapper::userToDtoResponse)
                 .toList();

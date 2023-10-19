@@ -2,6 +2,7 @@ package com.hiberus.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.hiberus.DogsApplication;
 import com.hiberus.enums.Breed;
 import com.hiberus.models.Dog;
 import com.hiberus.services.impl.DogsServiceImpl;
@@ -24,7 +25,7 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest
+@SpringBootTest(classes = DogsApplication.class)
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 public class DogsControllerTest {
@@ -164,8 +165,7 @@ public class DogsControllerTest {
         // Then
         MvcResult mvcResult = mockMvc.perform(put("/api/dogs/reserve-dog")
                         .param("dogId", String.valueOf(dogId))
-                        .param("userId", String.valueOf(userId))
-                        .contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(dog)))
+                        .param("userId", String.valueOf(userId)))
                 .andExpect(status().isOk()).andReturn();
 
         String actualResponseBody = mvcResult.getResponse().getContentAsString();
