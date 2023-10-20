@@ -124,7 +124,6 @@ public class DogsControllerTest {
     public void createDogShouldReturn201() throws Exception {
         // Given
         Dog dog = new Dog(1L, "Firulais", Breed.BEAGLE, LocalDate.now(), null);
-        Long dogId = 1L;
 
         // When
         when(dogsService.createDog(any(Dog.class))).thenReturn(dog);
