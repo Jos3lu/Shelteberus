@@ -1,68 +1,77 @@
-2023-10-10 10:04:45.933  INFO [dogs,,] 20108 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2023-10-10 10:04:46.679  INFO [dogs,,] 20108 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=dogs, profiles=[default], label=null, version=null, state=null
-2023-10-10 10:04:46.682  INFO [dogs,,] 20108 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/configuration/dogs.yml'}]
-2023-10-10 10:04:46.716  INFO [dogs,,] 20108 --- [main] com.hiberus.DogsApplication              : No active profile set, falling back to 1 default profile: "default"
-2023-10-10 10:04:49.145  INFO [dogs,,] 20108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-10 10:04:49.429  INFO [dogs,,] 20108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 252 ms. Found 1 JPA repository interfaces.
-2023-10-10 10:04:50.395  INFO [dogs,,] 20108 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=26bacb3d-6cbe-36dc-887d-7c69d2e29da5
-2023-10-10 10:04:52.229  INFO [dogs,,] 20108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-10-10 10:04:52.260  INFO [dogs,,] 20108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-10 10:04:52.261  INFO [dogs,,] 20108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-10 10:04:52.733  INFO [dogs,,] 20108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-10 10:04:52.734  INFO [dogs,,] 20108 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5985 ms
-2023-10-10 10:04:54.321  WARN [dogs,,] 20108 --- [pool-2-thread-1] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information}]
-2023-10-10 10:04:57.207  INFO [dogs,,] 20108 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:04:58.671  INFO [dogs,,] 20108 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-10 10:04:58.794  INFO [dogs,,] 20108 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-10 10:04:59.207  INFO [dogs,,] 20108 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-10 10:04:59.446  INFO [dogs,,] 20108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-10 10:04:59.847  INFO [dogs,,] 20108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-10 10:04:59.890  INFO [dogs,,] 20108 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-10-10 10:05:01.284  WARN [dogs,,] 20108 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 10:05:01.285  WARN [dogs,,] 20108 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "dogs" does not exist, skipping
-2023-10-10 10:05:01.287  WARN [dogs,,] 20108 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 10:05:01.288  WARN [dogs,,] 20108 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
-2023-10-10 10:05:01.366  INFO [dogs,,] 20108 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-10 10:05:01.388  INFO [dogs,,] 20108 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 10:05:02.638  WARN [dogs,,] 20108 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-10 10:05:02.792  INFO [dogs,,] 20108 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'users' URL not provided. Will try picking an instance via load-balancing.
-2023-10-10 10:05:06.511  INFO [dogs,,] 20108 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:05:06.570  INFO [dogs,,] 20108 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2023-10-10 10:05:07.316  WARN [dogs,,] 20108 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-10-10 10:05:07.447  INFO [dogs,,] 20108 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 27 endpoint(s) beneath base path '/actuator'
-2023-10-10 10:05:07.540  INFO [dogs,,] 20108 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2023-10-10 10:05:07.676  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2023-10-10 10:05:07.684  INFO [dogs,,] 20108 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:05:07.731  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-10 10:05:07.731  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-10 10:05:07.732  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-10 10:05:07.732  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-10 10:05:07.733  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-10 10:05:07.733  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-10 10:05:07.734  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-10 10:05:07.975  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-10 10:05:07.979  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2023-10-10 10:05:07.984  INFO [dogs,,] 20108 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2023-10-10 10:05:07.992  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1696925107990 with initial instances count: 1
-2023-10-10 10:05:08.006  INFO [dogs,,] 20108 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOGS with eureka with status UP
-2023-10-10 10:05:08.008  INFO [dogs,,] 20108 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696925108008, current=UP, previous=STARTING]
-2023-10-10 10:05:08.011  INFO [dogs,,] 20108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:d886b23ed078dc2e3e72258341733d30: registering service...
-2023-10-10 10:05:08.076  INFO [dogs,,] 20108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-10-10 10:05:08.078  INFO [dogs,,] 20108 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2023-10-10 10:05:08.102  INFO [dogs,,] 20108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:d886b23ed078dc2e3e72258341733d30 - registration status: 204
-2023-10-10 10:05:08.702  INFO [dogs,f14f872ed0775989,f14f872ed0775989] 20108 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-10 10:05:08.702  INFO [dogs,f14f872ed0775989,f14f872ed0775989] 20108 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-10 10:05:08.706  INFO [dogs,f14f872ed0775989,f14f872ed0775989] 20108 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2023-10-10 10:05:09.487  INFO [dogs,,] 20108 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:05:09.528  INFO [dogs,,] 20108 --- [main] com.hiberus.DogsApplication              : Started DogsApplication in 28.564 seconds (JVM running for 29.707)
-2023-10-10 10:10:07.771  INFO [dogs,,] 20108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:15:07.805  INFO [dogs,,] 20108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:20:07.815  INFO [dogs,,] 20108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:24:01.648  INFO [dogs,ddc01a5093f8b6bd,ddc01a5093f8b6bd] 20108 --- [http-nio-8082-exec-10] c.hiberus.services.impl.DogsServiceImpl  : Dogs sent
-2023-10-10 10:24:03.585  WARN [dogs,,] 20108 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
-2023-10-10 10:24:03.600  WARN [dogs,,] 20108 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information)
+2023-10-20 09:27:38.426  INFO [dogs,,] 19036 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2023-10-20 09:27:38.948  INFO [dogs,,] 19036 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=dogs, profiles=[default], label=null, version=null, state=null
+2023-10-20 09:27:38.950  INFO [dogs,,] 19036 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/configuration/dogs.yml'}]
+2023-10-20 09:27:38.987  INFO [dogs,,] 19036 --- [main] com.hiberus.DogsApplication              : No active profile set, falling back to 1 default profile: "default"
+2023-10-20 09:27:40.896  INFO [dogs,,] 19036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20 09:27:41.097  INFO [dogs,,] 19036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 1 JPA repository interfaces.
+2023-10-20 09:27:42.073  INFO [dogs,,] 19036 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=26bacb3d-6cbe-36dc-887d-7c69d2e29da5
+2023-10-20 09:27:43.878  INFO [dogs,,] 19036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-10-20 09:27:43.893  INFO [dogs,,] 19036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20 09:27:43.894  INFO [dogs,,] 19036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-20 09:27:44.289  INFO [dogs,,] 19036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20 09:27:44.289  INFO [dogs,,] 19036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5269 ms
+2023-10-20 09:27:45.701  WARN [dogs,,] 19036 --- [pool-2-thread-1] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information}]
+2023-10-20 09:27:48.250  INFO [dogs,,] 19036 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-10-20 09:27:49.444  INFO [dogs,,] 19036 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20 09:27:49.620  INFO [dogs,,] 19036 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-20 09:27:50.109  INFO [dogs,,] 19036 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-20 09:27:50.428  INFO [dogs,,] 19036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-20 09:27:50.830  INFO [dogs,,] 19036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-20 09:27:50.871  INFO [dogs,,] 19036 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-10-20 09:27:51.932  WARN [dogs,,] 19036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-10-20 09:27:51.933  WARN [dogs,,] 19036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "dogs" does not exist, skipping
+2023-10-20 09:27:51.935  WARN [dogs,,] 19036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-10-20 09:27:51.935  WARN [dogs,,] 19036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2023-10-20 09:27:51.971  INFO [dogs,,] 19036 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20 09:27:51.986  INFO [dogs,,] 19036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20 09:27:53.090  WARN [dogs,,] 19036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20 09:27:53.259  INFO [dogs,,] 19036 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'users' URL not provided. Will try picking an instance via load-balancing.
+2023-10-20 09:27:56.691  INFO [dogs,,] 19036 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-10-20 09:27:56.765  INFO [dogs,,] 19036 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-10-20 09:27:57.730  WARN [dogs,,] 19036 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-10-20 09:27:57.889  INFO [dogs,,] 19036 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 27 endpoint(s) beneath base path '/actuator'
+2023-10-20 09:27:58.058  INFO [dogs,,] 19036 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-10-20 09:27:58.309  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-10-20 09:27:58.334  INFO [dogs,,] 19036 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-20 09:27:58.416  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-20 09:27:58.417  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-20 09:27:58.418  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-20 09:27:58.418  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-20 09:27:58.419  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-20 09:27:58.419  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-10-20 09:27:58.420  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-20 09:27:58.853  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-20 09:27:58.859  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-10-20 09:27:58.864  INFO [dogs,,] 19036 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-10-20 09:27:58.875  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1697786878871 with initial instances count: 0
+2023-10-20 09:27:58.900  INFO [dogs,,] 19036 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOGS with eureka with status UP
+2023-10-20 09:27:58.902  INFO [dogs,,] 19036 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697786878902, current=UP, previous=STARTING]
+2023-10-20 09:27:58.907  INFO [dogs,,] 19036 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5: registering service...
+2023-10-20 09:27:58.973  INFO [dogs,,] 19036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-10-20 09:27:58.975  INFO [dogs,,] 19036 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2023-10-20 09:27:58.990  INFO [dogs,,] 19036 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5 - registration status: 204
+2023-10-20 09:28:00.403  INFO [dogs,,] 19036 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2023-10-20 09:28:00.495  INFO [dogs,,] 19036 --- [main] com.hiberus.DogsApplication              : Started DogsApplication in 26.58 seconds (JVM running for 27.787)
+2023-10-20 09:28:02.201  INFO [dogs,2cb732075c267d49,2cb732075c267d49] 19036 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20 09:28:02.202  INFO [dogs,2cb732075c267d49,2cb732075c267d49] 19036 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20 09:28:02.206  INFO [dogs,2cb732075c267d49,2cb732075c267d49] 19036 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-20 09:28:28.864  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-10-20 09:28:28.865  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-10-20 09:28:28.868  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-10-20 09:28:28.870  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-10-20 09:28:28.876  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-10-20 09:28:28.877  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-10-20 09:28:28.879  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-10-20 09:28:28.922  INFO [dogs,,] 19036 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-10-20 09:32:58.430  INFO [dogs,,] 19036 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-20 09:37:58.442  INFO [dogs,,] 19036 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-20 09:42:58.445  INFO [dogs,,] 19036 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-20 09:47:58.594  INFO [dogs,,] 19036 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-20 09:50:32.734  INFO [dogs,8bce637750aeb6d4,8bce637750aeb6d4] 19036 --- [http-nio-8082-exec-10] c.hiberus.services.impl.DogsServiceImpl  : Dog Paco created
+2023-10-20 09:50:58.877  WARN [dogs,,] 19036 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2023-10-20 09:50:58.932  WARN [dogs,,] 19036 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out)
 
-org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791) ~[spring-web-5.3.30.jar:5.3.30]
 	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:67) ~[spring-cloud-sleuth-zipkin-3.1.9.jar:3.1.9]
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:666) ~[spring-web-5.3.30.jar:5.3.30]
@@ -75,284 +84,48 @@ org.springframework.web.client.ResourceAccessException: I/O error on POST reques
 	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299) ~[zipkin-reporter-2.16.3.jar:na]
 	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378) ~[zipkin-reporter-2.16.3.jar:na]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
-	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178) ~[na:na]
-	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:534) ~[na:na]
-	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:639) ~[na:na]
-	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:282) ~[na:na]
-	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:387) ~[na:na]
-	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:409) ~[na:na]
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309) ~[na:na]
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242) ~[na:na]
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128) ~[na:na]
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057) ~[na:na]
-	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.3.30.jar:5.3.30]
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.3.30.jar:5.3.30]
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-5.3.30.jar:5.3.30]
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782) ~[spring-web-5.3.30.jar:5.3.30]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244) ~[na:na]
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284) ~[na:na]
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:827) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:762) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1688) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1589) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529) ~[na:na]
+	at org.springframework.http.client.SimpleClientHttpResponse.getRawStatusCode(SimpleClientHttpResponse.java:55) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.client.DefaultResponseErrorHandler.hasError(DefaultResponseErrorHandler.java:61) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:813) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:783) ~[spring-web-5.3.30.jar:5.3.30]
 	... 11 common frames omitted
 
-2023-10-10 10:24:46.066  INFO [dogs,29a838679aa508a2,29a838679aa508a2] 20108 --- [http-nio-8082-exec-1] c.hiberus.services.impl.DogsServiceImpl  : Dogs sent
-2023-10-10 10:25:07.838  INFO [dogs,,] 20108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:28:23.711  WARN [dogs,656b2448f28f89d4,656b2448f28f89d4] 20108 --- [http-nio-8082-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.sql.Date` from String "12/11/2007": not a valid representation (error: Failed to parse Date value '12/11/2007': Cannot parse date "12/11/2007": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.sql.Date` from String "12/11/2007": not a valid representation (error: Failed to parse Date value '12/11/2007': Cannot parse date "12/11/2007": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 4, column: 14] (through reference chain: com.hiberus.dtos.DogRequestDto["birth"])]
-2023-10-10 10:30:07.846  INFO [dogs,,] 20108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:33:58.865  INFO [dogs,,] 20108 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
-2023-10-10 10:33:58.880  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DOGS with eureka with status DOWN
-2023-10-10 10:33:58.880  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696926838880, current=DOWN, previous=UP]
-2023-10-10 10:33:58.880  INFO [dogs,,] 20108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:d886b23ed078dc2e3e72258341733d30: registering service...
-2023-10-10 10:33:58.901  INFO [dogs,,] 20108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:d886b23ed078dc2e3e72258341733d30 - registration status: 204
-2023-10-10 10:33:59.053  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 10:33:59.069  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-10-10 10:33:59.272  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-10 10:33:59.288  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-10 10:33:59.288  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2023-10-10 10:34:02.310  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2023-10-10 10:34:02.346  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:d886b23ed078dc2e3e72258341733d30 - deregister  status: 200
-2023-10-10 10:34:02.353  INFO [dogs,,] 20108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2023-10-10 10:35:27.574  INFO [dogs,,] 16444 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2023-10-10 10:35:27.765  INFO [dogs,,] 16444 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=dogs, profiles=[default], label=null, version=null, state=null
-2023-10-10 10:35:27.767  INFO [dogs,,] 16444 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/configuration/dogs.yml'}]
-2023-10-10 10:35:27.786  INFO [dogs,,] 16444 --- [main] com.hiberus.DogsApplication              : No active profile set, falling back to 1 default profile: "default"
-2023-10-10 10:35:29.245  INFO [dogs,,] 16444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-10 10:35:29.390  INFO [dogs,,] 16444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 1 JPA repository interfaces.
-2023-10-10 10:35:30.042  INFO [dogs,,] 16444 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=26bacb3d-6cbe-36dc-887d-7c69d2e29da5
-2023-10-10 10:35:31.189  INFO [dogs,,] 16444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-10-10 10:35:31.208  INFO [dogs,,] 16444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-10 10:35:31.208  INFO [dogs,,] 16444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-10 10:35:31.446  INFO [dogs,,] 16444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-10 10:35:31.446  INFO [dogs,,] 16444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3634 ms
-2023-10-10 10:35:34.464  INFO [dogs,,] 16444 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:35:35.458  INFO [dogs,,] 16444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-10 10:35:35.580  INFO [dogs,,] 16444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-10 10:35:35.842  INFO [dogs,,] 16444 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-10 10:35:36.014  INFO [dogs,,] 16444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-10 10:35:36.255  INFO [dogs,,] 16444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-10 10:35:36.280  INFO [dogs,,] 16444 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-10-10 10:35:36.519 ERROR [dogs,,] 16444 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hiberus.models.Dog.birth
-2023-10-10 10:35:36.520  WARN [dogs,,] 16444 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hiberus.models.Dog.birth
-2023-10-10 10:35:37.538  WARN [dogs,,] 16444 --- [main] z.r.AsyncReporter$BoundedAsyncReporter   : Timed out waiting for in-flight spans to send
-2023-10-10 10:35:37.539  INFO [dogs,,] 16444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-10 10:35:37.547  INFO [dogs,,] 16444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-10 10:35:37.554  INFO [dogs,,] 16444 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-10-10 10:35:37.558  WARN [dogs,,] 16444 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@17.0.8/java.net.Inet6AddressImpl.getHostByAddr(Native Method)
- java.base@17.0.8/java.net.InetAddress$PlatformNameService.getHostByAddr(InetAddress.java:939)
- java.base@17.0.8/java.net.InetAddress.getHostFromNameService(InetAddress.java:662)
- java.base@17.0.8/java.net.InetAddress.getHostName(InetAddress.java:605)
- java.base@17.0.8/java.net.InetAddress.getHostName(InetAddress.java:577)
- app//org.springframework.cloud.commons.util.InetUtils$$Lambda$141/0x00000229061079b8.call(Unknown Source)
- java.base@17.0.8/java.util.concurrent.FutureTask.run(FutureTask.java:264)
- java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
- java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
- java.base@17.0.8/java.lang.Thread.run(Thread.java:833)
-2023-10-10 10:35:37.572  INFO [dogs,,] 16444 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-10-10 10:35:37.598 ERROR [dogs,,] 16444 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hiberus.models.Dog.birth
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1160) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:911) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.16.jar:2.7.16]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.16.jar:2.7.16]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.16.jar:2.7.16]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.16.jar:2.7.16]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.16.jar:2.7.16]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.16.jar:2.7.16]
-	at com.hiberus.DogsApplication.main(DogsApplication.java:13) ~[classes/:na]
-Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hiberus.models.Dog.birth
-	at org.hibernate.cfg.annotations.SimpleValueBinder.setType(SimpleValueBinder.java:188) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyAndValue(PropertyBinder.java:185) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:205) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2325) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:968) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:793) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.30.jar:5.3.30]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.30.jar:5.3.30]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.30.jar:5.3.30]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.30.jar:5.3.30]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.30.jar:5.3.30]
-	... 16 common frames omitted
-
-2023-10-10 10:35:37.600  INFO [dogs,,] 16444 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
-2023-10-10 10:51:10.392  INFO [dogs,,] 35576 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2023-10-10 10:51:10.539  INFO [dogs,,] 35576 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=dogs, profiles=[default], label=null, version=null, state=null
-2023-10-10 10:51:10.540  INFO [dogs,,] 35576 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/configuration/dogs.yml'}]
-2023-10-10 10:51:10.558  INFO [dogs,,] 35576 --- [main] com.hiberus.DogsApplication              : No active profile set, falling back to 1 default profile: "default"
-2023-10-10 10:51:11.981  INFO [dogs,,] 35576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-10 10:51:12.151  INFO [dogs,,] 35576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 1 JPA repository interfaces.
-2023-10-10 10:51:12.787  INFO [dogs,,] 35576 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=26bacb3d-6cbe-36dc-887d-7c69d2e29da5
-2023-10-10 10:51:13.949  INFO [dogs,,] 35576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-10-10 10:51:13.970  INFO [dogs,,] 35576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-10 10:51:13.970  INFO [dogs,,] 35576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-10 10:51:14.205  INFO [dogs,,] 35576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-10 10:51:14.206  INFO [dogs,,] 35576 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3618 ms
-2023-10-10 10:51:17.105  INFO [dogs,,] 35576 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:51:18.066  INFO [dogs,,] 35576 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-10 10:51:18.147  INFO [dogs,,] 35576 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-10 10:51:18.439  INFO [dogs,,] 35576 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-10 10:51:18.609  INFO [dogs,,] 35576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-10 10:51:18.781  INFO [dogs,,] 35576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-10 10:51:18.793  INFO [dogs,,] 35576 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-10-10 10:51:19.368  WARN [dogs,,] 35576 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 10:51:19.369  WARN [dogs,,] 35576 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "dogs" does not exist, skipping
-2023-10-10 10:51:19.370  WARN [dogs,,] 35576 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 10:51:19.370  WARN [dogs,,] 35576 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
-2023-10-10 10:51:19.390  INFO [dogs,,] 35576 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-10 10:51:19.398  INFO [dogs,,] 35576 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 10:51:20.220  WARN [dogs,,] 35576 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-10 10:51:20.302  INFO [dogs,,] 35576 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'users' URL not provided. Will try picking an instance via load-balancing.
-2023-10-10 10:51:22.709  INFO [dogs,,] 35576 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:51:22.726  INFO [dogs,,] 35576 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2023-10-10 10:51:23.004  WARN [dogs,,] 35576 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-10-10 10:51:23.078  INFO [dogs,,] 35576 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 27 endpoint(s) beneath base path '/actuator'
-2023-10-10 10:51:23.136  INFO [dogs,,] 35576 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2023-10-10 10:51:23.278  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2023-10-10 10:51:23.286  INFO [dogs,,] 35576 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:51:23.328  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-10 10:51:23.328  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-10 10:51:23.328  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-10 10:51:23.328  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-10 10:51:23.328  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-10 10:51:23.329  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-10 10:51:23.329  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-10 10:51:23.486  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-10 10:51:23.489  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2023-10-10 10:51:23.493  INFO [dogs,,] 35576 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2023-10-10 10:51:23.498  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1696927883497 with initial instances count: 1
-2023-10-10 10:51:23.509  INFO [dogs,,] 35576 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOGS with eureka with status UP
-2023-10-10 10:51:23.510  INFO [dogs,,] 35576 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696927883510, current=UP, previous=STARTING]
-2023-10-10 10:51:23.515  INFO [dogs,,] 35576 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6ad36396b46856ceb5a2947a40429bac: registering service...
-2023-10-10 10:51:23.560  INFO [dogs,,] 35576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-10-10 10:51:23.561  INFO [dogs,,] 35576 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2023-10-10 10:51:23.575  INFO [dogs,,] 35576 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6ad36396b46856ceb5a2947a40429bac - registration status: 204
-2023-10-10 10:51:23.619  INFO [dogs,faa7ac63c3cf4091,faa7ac63c3cf4091] 35576 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-10 10:51:23.619  INFO [dogs,faa7ac63c3cf4091,faa7ac63c3cf4091] 35576 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-10 10:51:23.620  INFO [dogs,faa7ac63c3cf4091,faa7ac63c3cf4091] 35576 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-10-10 10:51:24.726  INFO [dogs,,] 35576 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:51:24.747  INFO [dogs,,] 35576 --- [main] com.hiberus.DogsApplication              : Started DogsApplication in 17.629 seconds (JVM running for 18.119)
-2023-10-10 10:53:04.118  WARN [dogs,f26300f3b7150683,f26300f3b7150683] 35576 --- [http-nio-8082-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "12/11/2007": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '12/11/2007' could not be parsed at index 0; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "12/11/2007": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '12/11/2007' could not be parsed at index 0<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 4, column: 14] (through reference chain: com.hiberus.dtos.DogRequestDto["birth"])]
-2023-10-10 10:54:33.910  INFO [dogs,,] 35576 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
-2023-10-10 10:54:33.912  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DOGS with eureka with status DOWN
-2023-10-10 10:54:33.912  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696928073912, current=DOWN, previous=UP]
-2023-10-10 10:54:33.912  INFO [dogs,,] 35576 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6ad36396b46856ceb5a2947a40429bac: registering service...
-2023-10-10 10:54:33.919  INFO [dogs,,] 35576 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6ad36396b46856ceb5a2947a40429bac - registration status: 204
-2023-10-10 10:54:33.940  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 10:54:33.940  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-10-10 10:54:34.020  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-10 10:54:34.028  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-10 10:54:34.029  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2023-10-10 10:54:37.041  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2023-10-10 10:54:37.046  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6ad36396b46856ceb5a2947a40429bac - deregister  status: 200
-2023-10-10 10:54:37.050  INFO [dogs,,] 35576 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2023-10-10 10:55:37.083  INFO [dogs,,] 28072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2023-10-10 10:55:37.211  INFO [dogs,,] 28072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=dogs, profiles=[default], label=null, version=null, state=null
-2023-10-10 10:55:37.212  INFO [dogs,,] 28072 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/configuration/dogs.yml'}]
-2023-10-10 10:55:37.236  INFO [dogs,,] 28072 --- [main] com.hiberus.DogsApplication              : No active profile set, falling back to 1 default profile: "default"
-2023-10-10 10:55:38.774  INFO [dogs,,] 28072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-10 10:55:38.943  INFO [dogs,,] 28072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 1 JPA repository interfaces.
-2023-10-10 10:55:39.612  INFO [dogs,,] 28072 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=26bacb3d-6cbe-36dc-887d-7c69d2e29da5
-2023-10-10 10:55:40.880  INFO [dogs,,] 28072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-10-10 10:55:40.903  INFO [dogs,,] 28072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-10 10:55:40.904  INFO [dogs,,] 28072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-10 10:55:41.104  INFO [dogs,,] 28072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-10 10:55:41.105  INFO [dogs,,] 28072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3835 ms
-2023-10-10 10:55:43.915  INFO [dogs,,] 28072 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:55:44.880  INFO [dogs,,] 28072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-10 10:55:44.939  INFO [dogs,,] 28072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-10 10:55:45.205  INFO [dogs,,] 28072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-10 10:55:45.382  INFO [dogs,,] 28072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-10 10:55:45.592  INFO [dogs,,] 28072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-10 10:55:45.603  INFO [dogs,,] 28072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-10-10 10:55:46.258  WARN [dogs,,] 28072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 10:55:46.258  WARN [dogs,,] 28072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "dogs" does not exist, skipping
-2023-10-10 10:55:46.259  WARN [dogs,,] 28072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 10:55:46.259  WARN [dogs,,] 28072 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
-2023-10-10 10:55:46.272  INFO [dogs,,] 28072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-10 10:55:46.278  INFO [dogs,,] 28072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 10:55:47.142  WARN [dogs,,] 28072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-10 10:55:47.261  INFO [dogs,,] 28072 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'users' URL not provided. Will try picking an instance via load-balancing.
-2023-10-10 10:55:49.688  INFO [dogs,,] 28072 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:55:49.707  INFO [dogs,,] 28072 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2023-10-10 10:55:50.010  WARN [dogs,,] 28072 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-10-10 10:55:50.080  INFO [dogs,,] 28072 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 27 endpoint(s) beneath base path '/actuator'
-2023-10-10 10:55:50.141  INFO [dogs,,] 28072 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2023-10-10 10:55:50.234  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2023-10-10 10:55:50.241  INFO [dogs,,] 28072 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 10:55:50.280  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-10 10:55:50.281  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-10 10:55:50.281  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-10 10:55:50.281  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-10 10:55:50.281  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-10 10:55:50.281  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-10 10:55:50.281  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-10 10:55:50.418  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-10 10:55:50.420  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2023-10-10 10:55:50.423  INFO [dogs,,] 28072 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2023-10-10 10:55:50.427  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1696928150426 with initial instances count: 4
-2023-10-10 10:55:50.436  INFO [dogs,,] 28072 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOGS with eureka with status UP
-2023-10-10 10:55:50.438  INFO [dogs,,] 28072 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696928150438, current=UP, previous=STARTING]
-2023-10-10 10:55:50.443  INFO [dogs,,] 28072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48: registering service...
-2023-10-10 10:55:50.477  INFO [dogs,,] 28072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-10-10 10:55:50.478  INFO [dogs,,] 28072 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2023-10-10 10:55:50.490  INFO [dogs,,] 28072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48 - registration status: 204
-2023-10-10 10:55:51.621  INFO [dogs,,] 28072 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 10:55:51.641  INFO [dogs,,] 28072 --- [main] com.hiberus.DogsApplication              : Started DogsApplication in 17.868 seconds (JVM running for 18.374)
-2023-10-10 10:55:53.598  INFO [dogs,67f070f81255e75c,67f070f81255e75c] 28072 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-10 10:55:53.599  INFO [dogs,67f070f81255e75c,67f070f81255e75c] 28072 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-10 10:55:53.600  INFO [dogs,67f070f81255e75c,67f070f81255e75c] 28072 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-10-10 10:56:10.386  INFO [dogs,36cdb9489c529de1,36cdb9489c529de1] 28072 --- [http-nio-8082-exec-3] c.hiberus.services.impl.DogsServiceImpl  : Dog Paco created
-2023-10-10 10:58:59.084  INFO [dogs,1a3ca14decf5e628,1a3ca14decf5e628] 28072 --- [http-nio-8082-exec-6] c.hiberus.services.impl.DogsServiceImpl  : Dogs sent
-2023-10-10 11:00:50.292  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:02:08.823  INFO [dogs,28bc75a1a34bc4d3,28bc75a1a34bc4d3] 28072 --- [http-nio-8082-exec-3] c.hiberus.services.impl.DogsServiceImpl  : Dog Nevado created
-2023-10-10 11:02:40.355  INFO [dogs,03d219bbdfb0e400,03d219bbdfb0e400] 28072 --- [http-nio-8082-exec-6] c.hiberus.services.impl.DogsServiceImpl  : Dogs sent
-2023-10-10 11:05:50.301  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:10:50.304  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:13:08.130  INFO [dogs,12adada8542516b7,efd9cd1590d987e5] 28072 --- [http-nio-8082-exec-2] c.hiberus.services.impl.DogsServiceImpl  : Dogs associated to a volunteer sent
-2023-10-10 11:15:50.314  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:20:50.328  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:25:50.333  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:27:07.653  WARN [dogs,e94a27ba50f5b366,e94a27ba50f5b366] 28072 --- [http-nio-8082-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "reserve-dog"]
-2023-10-10 11:27:23.250  INFO [dogs,1d12f1d0f27a40df,1d12f1d0f27a40df] 28072 --- [http-nio-8082-exec-7] c.hiberus.services.impl.DogsServiceImpl  : Dog 1 reserved
-2023-10-10 11:27:44.007  INFO [dogs,ca102477178885d6,ff3ed968bffd09c6] 28072 --- [http-nio-8082-exec-10] c.hiberus.services.impl.DogsServiceImpl  : Dog 1 deleted
-2023-10-10 11:28:27.171  INFO [dogs,97e81c6cc201dc58,97e81c6cc201dc58] 28072 --- [http-nio-8082-exec-5] c.hiberus.services.impl.DogsServiceImpl  : Dogs sent
-2023-10-10 11:30:50.339  INFO [dogs,,] 28072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:31:22.213  INFO [dogs,9a44263af04dd5e6,9a44263af04dd5e6] 28072 --- [http-nio-8082-exec-10] c.hiberus.services.impl.DogsServiceImpl  : Dog 2 reserved
-2023-10-10 11:32:14.003  INFO [dogs,b45939f681e485c2,c976909e3b247f6f] 28072 --- [http-nio-8082-exec-5] c.hiberus.services.impl.DogsServiceImpl  : Dog 2 deleted
-2023-10-10 11:35:08.149  INFO [dogs,,] 28072 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
-2023-10-10 11:35:08.152  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DOGS with eureka with status DOWN
-2023-10-10 11:35:08.152  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696930508152, current=DOWN, previous=UP]
-2023-10-10 11:35:08.152  INFO [dogs,,] 28072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48: registering service...
-2023-10-10 11:35:08.163  INFO [dogs,,] 28072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48 - registration status: 204
-2023-10-10 11:35:08.204  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 11:35:08.205  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-10-10 11:35:08.212  WARN [dogs,,] 28072 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 11:35:08.212  WARN [dogs,,] 28072 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
-2023-10-10 11:35:09.150  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-10 11:35:09.162  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-10 11:35:09.169  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2023-10-10 11:35:12.180  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2023-10-10 11:35:12.187  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2023-10-20 09:52:20.954  INFO [dogs,a6f47e2a6df1ec24,a6f47e2a6df1ec24] 19036 --- [http-nio-8082-exec-7] c.hiberus.services.impl.DogsServiceImpl  : Dog Nevado created
+2023-10-20 09:52:26.689  INFO [dogs,ca57014ffe952c1d,ca57014ffe952c1d] 19036 --- [http-nio-8082-exec-1] c.hiberus.services.impl.DogsServiceImpl  : Dogs sent
+2023-10-20 09:52:58.601  INFO [dogs,,] 19036 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-10-20 09:54:27.605  INFO [dogs,27b1881de0c4993e,00c2ead29af75a35] 19036 --- [http-nio-8082-exec-3] c.hiberus.services.impl.DogsServiceImpl  : Dogs associated to a volunteer sent
+2023-10-20 09:55:35.535  INFO [dogs,b33006d0c19b1ef6,b33006d0c19b1ef6] 19036 --- [http-nio-8082-exec-2] c.hiberus.services.impl.DogsServiceImpl  : Dog 1 reserved
+2023-10-20 09:55:48.158  INFO [dogs,7671cd52eb1014c6,a892c8964bc895bf] 19036 --- [http-nio-8082-exec-4] c.hiberus.services.impl.DogsServiceImpl  : Dog 1 deleted
+2023-10-20 09:55:57.491  INFO [dogs,ef4281abf31fcd0d,ef4281abf31fcd0d] 19036 --- [http-nio-8082-exec-5] c.hiberus.services.impl.DogsServiceImpl  : Dog 2 reserved
+2023-10-20 09:56:01.319  INFO [dogs,9db55e2c7917dc96,a04715a1d590d76d] 19036 --- [http-nio-8082-exec-8] c.hiberus.services.impl.DogsServiceImpl  : Dog 2 deleted
+2023-10-20 09:56:37.701  INFO [dogs,,] 19036 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
+2023-10-20 09:56:37.717  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DOGS with eureka with status DOWN
+2023-10-20 09:56:37.792  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1697788597792, current=DOWN, previous=UP]
+2023-10-20 09:56:37.795  INFO [dogs,,] 19036 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5: registering service...
+2023-10-20 09:56:37.984  INFO [dogs,,] 19036 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5 - registration status: 204
+2023-10-20 09:56:38.838  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20 09:56:38.928  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-10-20 09:56:38.997  WARN [dogs,,] 19036 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-10-20 09:56:38.997  WARN [dogs,,] 19036 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2023-10-20 09:56:39.545  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-20 09:56:39.591  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-20 09:56:39.623  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-10-20 09:56:42.647  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-10-20 09:56:42.679  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -420,8 +193,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 52 more
 
-2023-10-10 11:35:12.187  WARN [dogs,,] 28072 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2023-10-10 11:35:12.194  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2023-10-20 09:56:42.679  WARN [dogs,,] 19036 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2023-10-20 09:56:42.707  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -490,8 +263,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 53 more
 
-2023-10-10 11:35:12.194  WARN [dogs,,] 28072 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2023-10-10 11:35:12.200 ERROR [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:8ee1ba44ce98b4c620245ca0b7c15f48 - de-registration failedCannot execute request on any known server
+2023-10-20 09:56:42.722  WARN [dogs,,] 19036 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2023-10-20 09:56:42.728 ERROR [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:6df3296f8819d8ba7bf84840951ab4e5 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
@@ -527,259 +300,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.16.jar:2.7.16]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2023-10-10 11:35:12.203  INFO [dogs,,] 28072 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2023-10-10 11:45:38.620  INFO [dogs,,] 36756 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2023-10-10 11:45:38.900  INFO [dogs,,] 36756 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=dogs, profiles=[default], label=null, version=null, state=null
-2023-10-10 11:45:38.901  INFO [dogs,,] 36756 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-classpath:/configuration/dogs.yml'}]
-2023-10-10 11:45:38.919  INFO [dogs,,] 36756 --- [main] com.hiberus.DogsApplication              : No active profile set, falling back to 1 default profile: "default"
-2023-10-10 11:45:39.985  INFO [dogs,,] 36756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-10 11:45:40.164  INFO [dogs,,] 36756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 1 JPA repository interfaces.
-2023-10-10 11:45:40.676  INFO [dogs,,] 36756 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=26bacb3d-6cbe-36dc-887d-7c69d2e29da5
-2023-10-10 11:45:41.556  INFO [dogs,,] 36756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-10-10 11:45:41.569  INFO [dogs,,] 36756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-10 11:45:41.569  INFO [dogs,,] 36756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-10 11:45:41.748  INFO [dogs,,] 36756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-10 11:45:41.749  INFO [dogs,,] 36756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2812 ms
-2023-10-10 11:45:44.246  INFO [dogs,,] 36756 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 11:45:44.981  INFO [dogs,,] 36756 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-10 11:45:45.053  INFO [dogs,,] 36756 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-10 11:45:45.250  INFO [dogs,,] 36756 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-10 11:45:45.370  INFO [dogs,,] 36756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-10 11:45:45.532  INFO [dogs,,] 36756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-10 11:45:45.550  INFO [dogs,,] 36756 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-10-10 11:45:46.236  WARN [dogs,,] 36756 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 11:45:46.237  WARN [dogs,,] 36756 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "dogs" does not exist, skipping
-2023-10-10 11:45:46.238  WARN [dogs,,] 36756 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 11:45:46.238  WARN [dogs,,] 36756 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
-2023-10-10 11:45:46.264  INFO [dogs,,] 36756 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-10 11:45:46.274  INFO [dogs,,] 36756 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 11:45:46.942  WARN [dogs,,] 36756 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-10 11:45:47.096  INFO [dogs,,] 36756 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'users' URL not provided. Will try picking an instance via load-balancing.
-2023-10-10 11:45:49.347  INFO [dogs,,] 36756 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 11:45:49.363  INFO [dogs,,] 36756 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2023-10-10 11:45:49.686  WARN [dogs,,] 36756 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-10-10 11:45:49.768  INFO [dogs,,] 36756 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 27 endpoint(s) beneath base path '/actuator'
-2023-10-10 11:45:49.844  INFO [dogs,,] 36756 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2023-10-10 11:45:49.926  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2023-10-10 11:45:49.930  INFO [dogs,,] 36756 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:45:49.952  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2023-10-10 11:45:49.953  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2023-10-10 11:45:49.953  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2023-10-10 11:45:49.953  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2023-10-10 11:45:49.953  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2023-10-10 11:45:49.953  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2023-10-10 11:45:49.953  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2023-10-10 11:45:50.196  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2023-10-10 11:45:50.202  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2023-10-10 11:45:50.207  INFO [dogs,,] 36756 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2023-10-10 11:45:50.216  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1696931150214 with initial instances count: 1
-2023-10-10 11:45:50.238  INFO [dogs,,] 36756 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOGS with eureka with status UP
-2023-10-10 11:45:50.240  INFO [dogs,,] 36756 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696931150240, current=UP, previous=STARTING]
-2023-10-10 11:45:50.242  INFO [dogs,,] 36756 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50: registering service...
-2023-10-10 11:45:50.277  INFO [dogs,,] 36756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-10-10 11:45:50.278  INFO [dogs,,] 36756 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2023-10-10 11:45:50.290  INFO [dogs,,] 36756 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50 - registration status: 204
-2023-10-10 11:45:51.595  INFO [dogs,,] 36756 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2023-10-10 11:45:51.625  INFO [dogs,,] 36756 --- [main] com.hiberus.DogsApplication              : Started DogsApplication in 16.382 seconds (JVM running for 17.043)
-2023-10-10 11:45:53.695  INFO [dogs,663f194add300709,663f194add300709] 36756 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-10 11:45:53.696  INFO [dogs,663f194add300709,663f194add300709] 36756 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-10 11:45:53.701  INFO [dogs,663f194add300709,663f194add300709] 36756 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2023-10-10 11:50:50.019  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 11:55:50.029  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:00:50.040  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:05:50.059  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:10:50.092  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:15:50.111  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:20:50.127  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:25:50.137  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:30:50.147  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:35:50.168  INFO [dogs,,] 36756 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2023-10-10 12:38:35.584  INFO [dogs,,] 36756 --- [Thread-3] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
-2023-10-10 12:38:36.033  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DOGS with eureka with status DOWN
-2023-10-10 12:38:36.034  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1696934316034, current=DOWN, previous=UP]
-2023-10-10 12:38:36.037  INFO [dogs,,] 36756 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50: registering service...
-2023-10-10 12:38:36.243  INFO [dogs,,] 36756 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50 - registration status: 204
-2023-10-10 12:38:38.239  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-10 12:38:38.331  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-10-10 12:38:40.351  WARN [dogs,,] 36756 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-10-10 12:38:40.354  WARN [dogs,,] 36756 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
-2023-10-10 12:38:40.435  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-10 12:38:40.467  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-10 12:38:40.475  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2023-10-10 12:38:43.479  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2023-10-10 12:38:43.542  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1112)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1078)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1024)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
-	... 39 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 52 more
-
-2023-10-10 12:38:43.542  WARN [dogs,,] 36756 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2023-10-10 12:38:43.559  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1112)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1078)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1024)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
-	... 40 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 53 more
-
-2023-10-10 12:38:43.559  WARN [dogs,,] 36756 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2023-10-10 12:38:43.599 ERROR [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOGS/dogs:b49f993428c9a502a96fcccdf4d84e50 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) ~[spring-cloud-context-3.1.4.jar:3.1.4]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-3.1.4.jar:3.1.4]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.30.jar:5.3.30]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1112) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1078) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.16.jar:2.7.16]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1024) ~[spring-context-5.3.30.jar:5.3.30]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.16.jar:2.7.16]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.16.jar:2.7.16]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-10-10 12:38:43.632  INFO [dogs,,] 36756 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-10-20 09:56:42.744  INFO [dogs,,] 19036 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
